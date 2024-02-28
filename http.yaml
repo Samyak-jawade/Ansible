@@ -1,0 +1,37 @@
+---
+- name: Configure HTTP Server
+  hosts: your_target_server
+  become: yes  # Run tasks with elevated privileges (sudo)
+
+  tasks:
+    - name: Install Apache (for Debian/Ubuntu systems)
+      apt:
+        name: apache2
+        state: present
+      when: ansible_pkg_mgr == 'apt'
+
+    - name: Install Apache (for Red Hat/CentOS systems)
+      yum:
+        name: httpd
+        state: present
+      when: ansible_pkg_mgr == 'yum'
+
+    - name: Ensure Apache service is running
+      service:
+        name: apache2  # Use "httpd" for Red Hat/CentOS
+        state: started
+        enabled: yes
+
+    - name: Allow HTTP traffic through firewall (for Debian/Ubuntu)
+      ufw:
+        rule: allow
+        name: 'Apache'
+      when: ansible_pkg_mgr == 'apt'
+
+    - name: Allow HTTP traffic through firewall (for Red Hat/CentOS)
+      firewalld:
+        service: http
+        state: enabled
+        immediate: yes
+      when: ansible_pkg_mgr == 'yum'
+...
