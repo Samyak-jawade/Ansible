@@ -1,6 +1,6 @@
 ---
 - name: Configure HTTP Server
-  hosts: your_target_server
+  hosts: all
   become: yes  # Run tasks with elevated privileges (sudo)
 
   tasks:
