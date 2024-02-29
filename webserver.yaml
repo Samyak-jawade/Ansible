@@ -1,6 +1,6 @@
 ---
 - name: Install Nginx and Node.js on Ubuntu
-  hosts: your_target_servers
+  hosts: all
   become: yes  # Run tasks with sudo
 
   tasks:
