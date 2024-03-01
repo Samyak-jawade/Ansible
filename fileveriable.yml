@@ -1,7 +1,7 @@
 ---
 - name: this playbook is for file veriable
   hosts: all
-  vars_file: veriablecalling.yml
+  vars_files: veriablecalling.yml
   tasks:
     - name: first task for file veriable
       debug:
