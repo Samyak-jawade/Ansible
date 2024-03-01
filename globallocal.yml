@@ -6,7 +6,7 @@
   tasks:
     - name: first global file
       debug:
-      msg: "{{url}}"
+        msg: "{{url}}"
     - name: second global file
       debug: 
         msg: "{{url}}"
