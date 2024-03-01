@@ -2,9 +2,9 @@
 - name: this playbook is for file veriable
   hosts: all
   vars_file: veriablecalling.yml
-    tasks:
-      - name: first task for file veriable
-        debug:
-          msg: "{{url}}"
+  tasks:
+    - name: first task for file veriable
+      debug:
+        msg: "{{url}}"
 ...          
     
