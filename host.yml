@@ -1,0 +1,9 @@
+---
+- name: Basic Ansible Playbook
+  hosts: all
+  gather_facts: true      
+  tasks:
+    - name: Print Hello
+      debug:
+        msg: "Hello from your Ansible playbook!"
+...        
