@@ -1,9 +1,16 @@
 ---
-- name: example playbook for package
+- name: Install Nginx
   hosts: all
-  become: yes
-  vars:
-    package: apache2
+  become: true  
+
   tasks:
-    - name: installing package
-      action: apt name: "{{apache2}}" state: letest   
+    - name: Update package cache
+      package:
+        name: "*"
+        state: latest
+      when: ansible_os_family == 'Debian'  
+
+    - name: Install Nginx package
+      package:
+        name: nginx
+        state: present
