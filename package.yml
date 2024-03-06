@@ -1,0 +1,9 @@
+---
+- name: example playbook for package
+  hosts: all
+  become: yes
+    vars:
+      package: apache2
+  tasks:
+    - name: installing package
+      action: apt name: "{{apache2}}" state: letest   

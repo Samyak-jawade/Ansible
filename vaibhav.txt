@@ -1,0 +1,3 @@
+hello this is auto git push pull demo 
+how it works in git and github samyak
+jawade
