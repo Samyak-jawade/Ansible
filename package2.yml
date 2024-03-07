@@ -1,0 +1,11 @@
+---
+- name: install nginx using action keyword
+  hosts: all
+  become: yes
+  tasks:
+    - name: update apt package cache
+      action: apt update_cache=yes
+
+    - name: install nginx package
+      action: apt name=nginx state=present
+...      
