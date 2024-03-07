@@ -5,9 +5,9 @@
   tasks:
     - name: install apache debian family
       command: apt install apache2 -y
-      when: ansible_os_family == "debian"
+      when: ansible_os_family == 'Debian'
 
       name: install httpd in redhat family
       command: yum install httpd -y
-      when: ansible_os_family == "redhat"
+      when: ansible_os_family == 'RedHat'
 ...      
