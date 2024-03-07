@@ -1,0 +1,13 @@
+---
+- name: condition playbook
+  hosts: all
+  become: yes
+  tasks:
+    - name: install apache debian family
+      command: apt install apache2 -y
+      when: ansible_os_family == "debian"
+
+      name: install httpd in redhat family
+      command: yum install httpd -y
+      when: ansible_os_family == "redhat"
+...      
