@@ -1,13 +1,17 @@
-- name: installing nginx
-    package:
-          name: nginx
-                state: latest
-- name: copyig index.html
-    copy:
-          src: index.html
-                dest: /var/www/html/index.html
-                    notify:
-                          - stratingnginx
-                          - name: print msg
-                              debug:
-                                    msg: "{{URL}}"
+---
+- name: Install and configure web server
+  apt:
+    name: apache2
+    state: present
+
+- name: Start the web server
+  service:
+    name: apache2
+    state: started
+
+- name: Copy a simple HTML file
+  copy:
+    src: index.html
+    dest: /var/www/html/
+  notify: Restart Apache
+...
