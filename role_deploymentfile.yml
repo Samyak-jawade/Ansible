@@ -3,6 +3,6 @@
   hosts: all
   becomes: true
   roles:
-    - webserver
-...    
+    - sampel_role
+...        
   
