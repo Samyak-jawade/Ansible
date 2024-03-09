@@ -1,6 +1,6 @@
 ---
 - name: Gather Facts and Print
-  hosts: your_target_hosts
+  hosts: all
   gather_facts: true
   tasks:
     - name: Print Hostname
