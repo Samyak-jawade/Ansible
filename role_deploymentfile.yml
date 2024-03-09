@@ -1,0 +1,8 @@
+---
+- name: my role deployment playbook
+  hosts: all
+  becomes: true
+  roles:
+    - webserver
+...    
+  
