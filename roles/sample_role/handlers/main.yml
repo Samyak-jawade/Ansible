@@ -1,0 +1,7 @@
+---
+- name: stratingnginx
+  systemd:
+    name: nginx
+    state: started
+    enabled: true
+...    
