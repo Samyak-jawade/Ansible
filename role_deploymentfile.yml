@@ -3,6 +3,6 @@
   hosts: all
   becomes: true
   roles:
-    - sampel_role
+    - role: sample_rple
 ...        
   
